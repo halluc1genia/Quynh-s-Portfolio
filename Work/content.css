@@ -1,0 +1,1473 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
+
+
+/* =========================================================
+   PROJECT NAVIGATION
+========================================================= */
+
+.project-navigation {
+
+    position: fixed;
+
+    top: clamp(
+        25px,
+        3vw,
+        45px
+    );
+
+    left: clamp(
+        20px,
+        3vw,
+        45px
+    );
+
+    width: clamp(
+        220px,
+        22vw,
+        330px
+    );
+
+    height: clamp(
+        150px,
+        12vw,
+        190px
+    );
+
+    z-index: 100;
+
+    opacity: 0;
+
+    transform:
+        translateX(-120%);
+
+    pointer-events: none;
+
+}
+
+
+.project-navigation.visible {
+
+    pointer-events: auto;
+
+    animation:
+        projectNavigationEnter
+        0.9s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        )
+        forwards;
+
+}
+
+
+@keyframes projectNavigationEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-120%);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+
+/* =========================================================
+   PROJECT WINDOW
+========================================================= */
+
+.project-window {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    cursor: ns-resize;
+
+}
+
+
+
+/* =========================================================
+   PROJECT LIST
+========================================================= */
+
+.project-list {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    will-change:
+        transform;
+
+}
+
+
+
+/* =========================================================
+   PROJECT ITEM
+========================================================= */
+
+.project-item {
+
+    position: relative;
+
+    width: 100%;
+
+    flex:
+        0 0 clamp(
+            28px,
+            2.3vw,
+            36px
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    user-select: none;
+
+}
+
+
+
+/* =========================================================
+   TITLE ROW
+========================================================= */
+
+.project-title-row {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: clamp(
+        7px,
+        0.7vw,
+        12px
+    );
+
+    width: 100%;
+
+    transform-origin:
+        left center;
+
+    transition:
+        transform 0.45s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+
+}
+
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.project-number {
+
+    flex-shrink: 0;
+
+    color: white;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: clamp(
+        8px,
+        0.65vw,
+        11px
+    );
+
+    line-height: 1;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.4s ease,
+        text-shadow 0.4s ease;
+
+}
+
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.project-title {
+
+    color: white;
+
+    font-family:
+        "Pixelify Sans",
+        sans-serif;
+
+    font-size: clamp(
+        13px,
+        1vw,
+        17px
+    );
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing:
+        -0.025em;
+
+    opacity: 0;
+
+    transform:
+        translateX(0)
+        scale(0.94);
+
+    transform-origin:
+        left center;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.45s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        ),
+        text-shadow 0.4s ease;
+
+}
+
+
+
+/* =========================================================
+   FOCUS TITLE
+========================================================= */
+
+.project-item.focus
+.project-title-row {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+.project-item.focus
+.project-title {
+
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        scale(1.12);
+
+    text-shadow:
+        0 0 6px
+        rgba(
+            255,
+            255,
+            255,
+            0.9
+        ),
+
+        0 0 16px
+        rgba(
+            255,
+            255,
+            255,
+            0.35
+        );
+
+}
+
+
+.project-item.focus
+.project-number {
+
+    opacity: 1;
+
+    text-shadow:
+        0 0 7px
+        rgba(
+            255,
+            255,
+            255,
+            0.75
+        );
+
+}
+
+
+
+/* =========================================================
+   PROJECT LINE
+========================================================= */
+
+.project-line {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin-top: 5px;
+
+    background: white;
+
+    opacity: 0;
+
+    transform-origin:
+        left center;
+
+    transition:
+        opacity 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+
+.project-item.focus
+.project-line {
+
+    opacity: 0.8;
+
+    box-shadow:
+        0 0 5px
+        rgba(
+            255,
+            255,
+            255,
+            0.4
+        );
+
+}
+
+
+
+/* =========================================================
+   NEARBY PROJECTS
+========================================================= */
+
+.project-item.near
+.project-title {
+
+    opacity: 0.48;
+
+}
+
+
+.project-item.near
+.project-number {
+
+    opacity: 0.3;
+
+}
+
+
+.project-item.near
+.project-line {
+
+    opacity: 0.18;
+
+}
+
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.project-item:hover
+.project-title {
+
+    text-shadow:
+        0 0 7px
+        rgba(
+            255,
+            255,
+            255,
+            0.55
+        );
+
+}
+
+
+
+/* =========================================================
+   PROJECT THUMBNAIL
+========================================================= */
+
+.project-thumbnail {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: clamp(
+        250px,
+        50vw,
+        1000px
+    );
+
+    height: clamp(
+        150px,
+        30vw,
+        900px
+    );
+
+    background:
+        rgba(
+            0,
+            98,
+            255,
+            0.07
+        );
+
+    overflow: hidden;
+
+    z-index: 20;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+
+    pointer-events: none;
+
+}
+
+
+.project-thumbnail.visible {
+
+    opacity: 1;
+
+}
+
+
+#thumbnailImage {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position:
+        center;
+
+}
+
+
+.project-thumbnail.changing {
+
+    opacity: 0.35;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        )
+        scale(0.98);
+
+}
+
+
+
+/* =========================================================
+   PROJECT OVERLAY
+========================================================= */
+
+.project-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: clamp(
+        20px,
+        4vw,
+        70px
+    );
+
+    box-sizing: border-box;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.82
+        );
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+
+    /*
+        Important:
+        allows the modal itself to
+        remain accessible on shorter
+        screens.
+    */
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling:
+        touch;
+
+}
+
+
+.project-overlay.open {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.project-modal {
+
+    position: relative;
+
+    width: min(
+        90vw,
+        1150px
+    );
+
+    /*
+        Never force the whole modal
+        to fit into 90vh.
+
+        The overlay can scroll instead.
+    */
+
+    max-height: none;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(260px, 0.75fr);
+
+    gap: clamp(
+        30px,
+        5vw,
+        80px
+    );
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    margin:
+        auto 0;
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.55s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+
+}
+
+
+.project-overlay.open
+.project-modal {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.project-close {
+
+    position: absolute;
+
+    top: -70px;
+    left: 5px;
+
+    z-index: 100;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border:
+        1px solid white;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 0, 0, 0.9);
+
+    color: white;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.project-close:hover {
+
+    background: white;
+
+    color: black;
+
+    transform:
+        rotate(90deg);
+
+}
+
+
+
+/* =========================================================
+   MODAL IMAGE AREA
+========================================================= */
+
+.modal-image-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    height: min(
+        65vh,
+        650px
+    );
+
+    min-height: 280px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    /*
+        IMPORTANT:
+        dots intentionally sit outside
+        the actual image.
+
+        Therefore this cannot be hidden.
+    */
+
+    overflow: visible;
+
+}
+
+
+.modal-image-wrapper img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position:
+        center;
+
+}
+
+
+
+/* =========================================================
+   IMAGE NAVIGATION
+========================================================= */
+
+.image-nav {
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 0;
+
+    height: 0;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transform:
+        translateY(-50%);
+
+    z-index: 10;
+
+    transition:
+        opacity 0.3s ease,
+        filter 0.25s ease;
+
+}
+
+
+.image-nav.prev {
+
+    left: 18px;
+
+    border-top:
+        8px solid transparent;
+
+    border-bottom:
+        8px solid transparent;
+
+    border-right:
+        12px solid white;
+
+}
+
+
+.image-nav.next {
+
+    right: 18px;
+
+    border-top:
+        8px solid transparent;
+
+    border-bottom:
+        8px solid transparent;
+
+    border-left:
+        12px solid white;
+
+}
+
+
+.image-nav:hover {
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            white
+        );
+
+}
+
+
+.image-nav.disabled {
+
+    opacity: 0.18;
+
+    cursor: default;
+
+    pointer-events: none;
+
+}
+
+
+
+/* =========================================================
+   IMAGE DOTS
+========================================================= */
+
+.image-dots {
+
+    position: absolute;
+
+    /*
+        JS overrides left/top.
+
+        It calculates the exact center
+        and bottom edge of the rendered
+        image.
+    */
+
+    left: 50%;
+
+    top: 100%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    width: max-content;
+
+    z-index: 15;
+
+    pointer-events: auto;
+
+}
+
+
+.image-dot {
+
+    flex-shrink: 0;
+
+    width: 5px;
+
+    height: 5px;
+
+    padding: 0;
+
+    border:
+        1px solid white;
+
+    border-radius: 50%;
+
+    background:
+        transparent;
+
+    opacity: 0.45;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        opacity 0.3s ease,
+        transform 0.3s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+
+}
+
+
+.image-dot:hover {
+
+    opacity: 0.85;
+
+}
+
+
+.image-dot.active {
+
+    background: white;
+
+    opacity: 1;
+
+    transform:
+        scale(1.25);
+
+}
+
+
+
+/* =========================================================
+   MODAL INFORMATION
+========================================================= */
+
+.modal-information {
+
+    min-width: 0;
+
+    /*
+        This is the important fix
+        for long descriptions.
+
+        The information column can
+        scroll independently instead
+        of pushing the whole modal
+        outside the viewport.
+    */
+
+    max-height: min(
+        65vh,
+        650px
+    );
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    padding-right: 10px;
+
+    scrollbar-width: thin;
+
+    color: white;
+
+}
+
+
+.modal-information::-webkit-scrollbar {
+
+    width: 3px;
+
+}
+
+
+.modal-information::-webkit-scrollbar-track {
+
+    background:
+        transparent;
+
+}
+
+
+.modal-information::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.35
+        );
+
+}
+
+
+
+/* =========================================================
+   MODAL NUMBER
+========================================================= */
+
+.modal-number {
+
+    margin-bottom: 12px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    opacity: 0.5;
+
+}
+
+
+
+/* =========================================================
+   TITLE NAVIGATION
+========================================================= */
+
+.modal-title-navigation {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+
+.modal-title-navigation h2 {
+
+    min-width: 0;
+
+    margin: 0;
+
+    font-family:
+        "Pixelify Sans",
+        sans-serif;
+
+    font-size: clamp(
+        30px,
+        4vw,
+        65px
+    );
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+    letter-spacing:
+        -0.04em;
+
+    overflow-wrap:
+        anywhere;
+
+}
+
+
+.title-nav {
+
+    flex-shrink: 0;
+
+    width: 0;
+
+    height: 0;
+
+    padding: 0;
+
+    border-top:
+        7px solid transparent;
+
+    border-bottom:
+        7px solid transparent;
+
+    background: transparent;
+
+    cursor: pointer;
+
+}
+
+
+.title-nav.prev {
+
+    border-right:
+        11px solid white;
+
+}
+
+
+.title-nav.next {
+
+    border-left:
+        11px solid white;
+
+}
+
+
+.title-nav:hover {
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            white
+        );
+
+}
+
+
+
+/* =========================================================
+   MODAL LINE
+========================================================= */
+
+.modal-line {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin:
+        30px 0;
+
+    background: white;
+
+    opacity: 0.5;
+
+}
+
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.modal-information p {
+
+    max-width: 480px;
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    opacity: 0.8;
+
+}
+
+
+.modal-meta {
+
+    margin-top: 28px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing:
+        0.08em;
+
+    text-transform:
+        uppercase;
+
+    opacity: 0.5;
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .project-navigation {
+
+        top: 18px;
+
+        left: 18px;
+
+        width: 190px;
+
+        height: 145px;
+
+    }
+
+
+    .project-title {
+
+        font-size: 12px;
+
+    }
+
+
+
+    /* ---------------------------------------------
+       MOBILE OVERLAY
+
+       Full page becomes the scroll container.
+    --------------------------------------------- */
+
+    .project-overlay {
+
+        align-items: flex-start;
+
+        justify-content: center;
+
+        padding:
+            45px 18px;
+
+        overflow-y: auto;
+
+        overflow-x: hidden;
+
+    }
+
+
+    /* ---------------------------------------------
+       MOBILE MODAL
+    --------------------------------------------- */
+
+    .project-modal {
+
+        width: 100%;
+
+        max-width: 550px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 28px;
+
+        margin: 0 auto;
+
+        padding-bottom: 30px;
+
+        overflow: visible;
+
+    }
+
+
+    .project-close {
+
+        top: -18px;
+
+        right: -4px;
+
+    }
+
+
+
+    /* ---------------------------------------------
+       MOBILE IMAGE
+
+       Do NOT use aspect-ratio here.
+
+       The old combination of:
+           height: auto
+           min-height
+           max-height
+           aspect-ratio
+
+       could cause the image area to
+       behave badly when resizing.
+
+       This gives it a predictable
+       viewport-relative height.
+    --------------------------------------------- */
+
+    .modal-image-wrapper {
+
+        width: 100%;
+
+        height: clamp(
+            250px,
+            48vh,
+            500px
+        );
+
+        min-height: 250px;
+
+        flex-shrink: 0;
+
+    }
+
+
+    .modal-image-wrapper img {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: contain;
+
+    }
+
+
+    .image-nav.prev {
+
+        left: 8px;
+
+    }
+
+
+    .image-nav.next {
+
+        right: 8px;
+
+    }
+
+
+
+    /* ---------------------------------------------
+       MOBILE DOTS
+    --------------------------------------------- */
+
+    .image-dots {
+
+        gap: 6px;
+
+    }
+
+
+    .image-dot {
+
+        width: 4px;
+
+        height: 4px;
+
+    }
+
+
+
+    /* ---------------------------------------------
+       MOBILE INFORMATION
+
+       Disable independent scrolling.
+
+       The entire overlay scrolls naturally.
+    --------------------------------------------- */
+
+    .modal-information {
+
+        max-height: none;
+
+        overflow: visible;
+
+        padding-right: 0;
+
+    }
+
+
+    .modal-information p {
+
+        max-width: none;
+
+    }
+
+
+
+    /* ---------------------------------------------
+       MOBILE TITLE
+    --------------------------------------------- */
+
+    .modal-title-navigation {
+
+        gap: 12px;
+
+    }
+
+
+    .modal-title-navigation h2 {
+
+        font-size: 38px;
+
+    }
+
+
+    .title-nav.prev {
+
+        border-top-width: 6px;
+
+        border-bottom-width: 6px;
+
+        border-right-width: 9px;
+
+    }
+
+
+    .title-nav.next {
+
+        border-top-width: 6px;
+
+        border-bottom-width: 6px;
+
+        border-left-width: 9px;
+
+    }
+
+
+    .modal-line {
+
+        margin:
+            20px 0;
+
+    }
+
+}
+
+
+
+em {
+
+    font-style: italic;
+
+}
+
+
+a {
+
+    color: red;
+
+    text-decoration: underline;
+
+}
+
+
+a:hover {
+
+    opacity: 0.8;
+
+}

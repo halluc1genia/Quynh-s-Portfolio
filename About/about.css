@@ -1,0 +1,1604 @@
+/* =====================================================
+   ABOUT
+   RESPONSIVE INTERACTIVE DATA WINDOWS
+===================================================== */
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+}
+
+
+body {
+
+    background: white;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main {
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: white;
+
+}
+
+
+
+
+/* =====================================================
+   ABOUT LAYER 1
+===================================================== */
+
+.about-layer-1 {
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+   LAYER 1 IMAGE
+===================================================== */
+
+#aboutLayer1Image {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    z-index: 1;
+
+    opacity: 0;
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   LAYER 1 DITHER
+===================================================== */
+
+#aboutLayer1Canvas {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   ABOUT LAYER 2
+===================================================== */
+
+.about-layer-2 {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+}
+
+
+.about-layer-2 img {
+
+    position: absolute;
+
+    display: block;
+
+    max-width: none;
+
+    pointer-events: auto;
+
+}
+
+
+/* =====================================================
+   ABOUT LAYER 3
+===================================================== */
+
+.about-layer-3 {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    z-index: 4;
+
+}
+
+
+/* =====================================================
+   MAIN SUBJECT
+===================================================== */
+
+.about-layer-3 img {
+
+    position: absolute;
+
+    display: block;
+
+    max-width: none;
+
+    pointer-events: auto;
+
+}
+
+
+#aboutLayer3Image {
+
+    width:
+        clamp(
+            170px,
+            17.2vw,
+            175px
+        );
+
+    height: auto;
+
+    left:
+        clamp(
+            38.5%,
+            calc(38.5% + 35vw),
+            48%
+        );
+
+    top:
+        calc(
+            61% + 2vh
+        );
+
+    opacity: 0;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+}
+
+
+/* =====================================================
+   RED DITHER CANVAS
+===================================================== */
+
+#aboutLayer3Canvas {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   SVG
+===================================================== */
+
+#aboutLayer3SVG {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 3;
+
+    overflow: visible;
+
+    pointer-events: none;
+
+}
+
+
+#layer3Connections {
+
+    overflow: visible;
+
+}
+
+
+/* =====================================================
+   CONNECTOR LINES
+===================================================== */
+
+.layer3-connector {
+
+    fill: none;
+
+    stroke:
+        #F80E00;
+
+    stroke-width: 1;
+
+    vector-effect:
+        non-scaling-stroke;
+
+    opacity: 0.85;
+
+    filter:
+        url(#lineGlow);
+
+}
+
+
+.layer3-connector.child {
+
+    stroke-width: 0.8;
+
+    opacity: 0.65;
+
+    stroke-dasharray:
+        3 3;
+
+}
+
+
+/* =====================================================
+   ANCHOR POINTS
+===================================================== */
+
+.layer3-anchor {
+
+    fill:
+        #F80E00;
+
+    opacity:
+        0.95;
+
+}
+
+
+/* =====================================================
+   TAB CONTAINER
+===================================================== */
+
+#aboutTabs {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   TAB
+===================================================== */
+
+.about-tab {
+
+    position: absolute;
+
+    box-sizing: border-box;
+
+    min-width: 72px;
+    min-height: 65px;
+
+    pointer-events: auto;
+
+    user-select: none;
+
+    will-change:
+        transform,
+        opacity;
+
+    cursor: grab;
+
+    touch-action: none;
+
+    transform:
+        translate3d(
+            0,
+            0,
+            0
+        );
+
+    transition:
+        box-shadow 0.15s ease,
+        opacity 0.18s ease,
+        filter 0.15s ease;
+
+}
+
+
+/* =====================================================
+   TAB CHILD
+===================================================== */
+
+.about-tab.is-child {
+
+    box-shadow:
+        3px 3px 0
+        rgba(
+            0,
+            0,
+            0,
+            0.15
+        );
+
+}
+
+
+.about-tab.is-child:hover {
+
+    box-shadow:
+        5px 5px 0
+        rgba(
+            0,
+            0,
+            0,
+            0.2
+        );
+
+}
+
+
+/* =====================================================
+   DRAG
+===================================================== */
+
+.about-tab:active {
+
+    cursor: grabbing;
+
+}
+
+
+.about-tab.is-dragging {
+
+    cursor: grabbing;
+
+    z-index: 1000 !important;
+
+    filter:
+        brightness(1.03);
+
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.about-tab:hover {
+
+    box-shadow:
+        0 0 14px
+        rgba(
+            248,
+            14,
+            0,
+            0.25
+        );
+
+}
+
+
+/* =====================================================
+   TAB HEADER
+===================================================== */
+
+.about-tab-header {
+
+    width: 100%;
+
+    min-height:
+        20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    box-sizing: border-box;
+
+    padding:
+        3px 5px;
+
+    border:
+        1px solid
+        #060505;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            12px,
+            0.7vw,
+            14px
+        );
+
+    font-weight:
+        bold;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        0.04em;
+
+    overflow: hidden;
+
+    cursor: grab;
+
+}
+
+
+.about-tab.is-dragging
+.about-tab-header {
+
+    cursor: grabbing;
+
+}
+
+
+/* =====================================================
+   TAB TITLE
+===================================================== */
+
+.about-tab-title {
+
+    font-family:
+        "Pixelify Sans",
+        sans-serif;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   CLOSE
+===================================================== */
+
+.about-tab-close {
+
+    width: 14px;
+    height: 14px;
+
+    padding: 0;
+    margin: 0;
+
+    border: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        transparent;
+
+    color:
+        currentColor;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        12px;
+
+    line-height:
+        12px;
+
+    cursor:
+        pointer;
+
+    flex-shrink: 0;
+
+    position: relative;
+
+    z-index: 20;
+
+    pointer-events:
+        auto;
+
+}
+
+
+.about-tab-close:hover {
+
+    opacity:
+        0.45;
+
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.about-tab-content {
+
+    width: 100%;
+
+    height:
+        calc(
+            100% - 20px
+        );
+
+    box-sizing: border-box;
+
+    padding:
+        8px;
+
+    border:
+        1px solid
+        #060505;
+
+    border-top:
+        0;
+
+    overflow: auto;
+
+    scrollbar-width:
+        none;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            10px,
+            0.7vw,
+            12px
+        );
+
+    line-height:
+        1.3;
+
+    pointer-events:
+        auto;
+
+}
+
+
+.about-tab-content::-webkit-scrollbar {
+
+    display:
+        none;
+
+}
+
+
+.about-tab-content p {
+
+    margin: 0;
+    padding: 0;
+
+}
+
+
+/* =====================================================
+   SECTION LABEL
+===================================================== */
+
+.tab-section-label {
+
+    display: block;
+
+    margin-bottom:
+        6px;
+
+    font-family:
+        "Pixelify Sans",
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing:
+        0.04em;
+
+
+}
+
+
+/* =====================================================
+   READ MORE
+===================================================== */
+
+.tab-read-more {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin-top:
+        8px;
+
+    padding:
+        4px 6px;
+
+    border:
+        1px solid
+        currentColor;
+
+    background:
+        transparent;
+
+    color:
+        inherit;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        7px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        0.06em;
+
+    cursor:
+        pointer;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+
+}
+
+
+.tab-read-more:hover {
+
+    background:
+        currentColor;
+
+    color:
+        var(--tab-bg);
+
+}
+
+
+/* =====================================================
+   LINKED TAB LABEL
+===================================================== */
+
+.tab-link {
+
+    display: block;
+
+    margin-top:
+        7px;
+
+    padding:
+        4px 5px;
+
+    border:
+        1px dashed
+        currentColor;
+
+    font-size:
+        7px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        0.05em;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
+
+}
+
+
+.tab-link:hover {
+
+    transform:
+        translateX(3px);
+
+    opacity:
+        0.65;
+
+}
+
+
+/* =====================================================
+   MINI DIVIDER
+===================================================== */
+
+.tab-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+    margin:
+        7px 0;
+
+    background:
+        currentColor;
+
+    opacity:
+        0.25;
+
+}
+
+
+/* =====================================================
+   DESIGN DNA
+===================================================== */
+
+.dna-list {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        7px;
+
+}
+
+
+.dna-row {
+
+    width: 100%;
+
+}
+
+
+.dna-label {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        5px;
+
+    margin-bottom:
+        2px;
+
+    font-size:
+        7px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        0.03em;
+
+}
+
+
+.dna-value {
+
+    flex-shrink:
+        0;
+
+}
+
+
+.dna-track {
+
+    width: 100%;
+
+    height:
+        5px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        currentColor;
+
+    box-sizing:
+        border-box;
+
+}
+
+
+.dna-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        currentColor;
+
+    transform-origin:
+        left center;
+
+    transition:
+        width 1.1s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        );
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-display {
+
+    position:
+        relative;
+
+    display:
+        inline-block;
+
+    min-width:
+        70px;
+
+    min-height:
+        18px;
+
+    margin-top:
+        4px;
+
+    padding:
+        4px 6px;
+
+    border:
+        1px solid
+        currentColor;
+
+    box-sizing:
+        border-box;
+
+    font-family:
+        monospace;
+
+    font-size:
+        8px;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        0.08em;
+
+    overflow:
+        hidden;
+
+}
+
+
+.status-display.glitch {
+
+    animation:
+        statusGlitch
+        0.16s
+        steps(2, end);
+
+}
+
+
+@keyframes statusGlitch {
+
+    0% {
+
+        transform:
+            translateX(0);
+
+        opacity:
+            1;
+
+    }
+
+    25% {
+
+        transform:
+            translateX(-2px);
+
+        opacity:
+            0.4;
+
+    }
+
+    50% {
+
+        transform:
+            translateX(2px);
+
+        opacity:
+            0.8;
+
+    }
+
+    75% {
+
+        transform:
+            translateX(-1px);
+
+        opacity:
+            0.3;
+
+    }
+
+    100% {
+
+        transform:
+            translateX(0);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =====================================================
+   RANDOM FACTS
+===================================================== */
+
+.fact-list {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        8px;
+
+}
+
+
+.fact {
+
+    display:
+        block;
+
+}
+
+
+.fact-number {
+
+    font-weight:
+        bold;
+
+}
+
+
+/* =====================================================
+   TAGS
+===================================================== */
+
+.obsession-grid {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        4px;
+
+}
+
+
+.obsession {
+
+    padding:
+        3px 5px;
+
+    border:
+        1px solid
+        currentColor;
+
+    font-size:
+        7px;
+
+    font-weight:
+        bold;
+
+}
+
+
+/* =====================================================
+   LAUNCHER
+===================================================== */
+
+#aboutTabLauncher {
+
+    position:
+        fixed;
+
+    left:
+        clamp(
+            8px,
+            1.5vw,
+            24px
+        );
+
+    bottom:
+        clamp(
+            8px,
+            1.5vw,
+            24px
+        );
+
+    z-index:
+        9999;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+    gap:
+        5px;
+
+    pointer-events:
+        auto;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    transform-origin:
+        bottom left;
+
+}
+
+
+/* =====================================================
+   LAUNCHER ITEM
+===================================================== */
+
+.about-launcher-item {
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        flex-start;
+
+    width:
+        fit-content;
+
+    min-width:
+        0;
+
+    padding:
+        6px 10px;
+
+    border:
+        1px solid
+        #060505;
+
+    box-sizing:
+        border-box;
+
+    font-family:
+        "Pixelify Sans",
+        sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 900;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        0.04em;
+
+    white-space:
+        nowrap;
+
+    cursor:
+        pointer;
+
+    user-select:
+        none;
+
+    opacity:
+        0;
+
+    transform:
+        translate3d(
+            -18px,
+            18px,
+            0
+        );
+
+    will-change:
+        transform,
+        opacity;
+
+    transition:
+        opacity 0.18s ease,
+        filter 0.15s ease,
+        transform 0.18s ease;
+
+}
+
+
+/* =====================================================
+   LAUNCHER LOAD
+===================================================== */
+
+#aboutTabLauncher.is-loaded
+.about-launcher-item {
+
+    animation:
+        launcherPop
+        0.65s
+        cubic-bezier(
+            0.16,
+            1,
+            0.3,
+            1
+        )
+        forwards;
+
+    animation-delay:
+        var(--launcher-delay);
+
+}
+
+
+@keyframes launcherPop {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translate3d(
+                -18px,
+                18px,
+                0
+            );
+
+    }
+
+    55% {
+
+        opacity:
+            1;
+
+        transform:
+            translate3d(
+                4px,
+                -3px,
+                0
+            );
+
+    }
+
+    75% {
+
+        transform:
+            translate3d(
+                -2px,
+                2px,
+                0
+            );
+
+    }
+
+    100% {
+
+        opacity:
+            1;
+
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   LAUNCHER STATES
+===================================================== */
+
+.about-launcher-item.is-closed {
+
+    opacity:
+        0.42;
+
+    filter:
+        grayscale(
+            0.35
+        );
+
+}
+
+
+.about-launcher-item.is-open {
+
+    opacity:
+        1;
+
+    filter:
+        none;
+
+}
+
+
+.about-launcher-item:hover {
+
+    opacity:
+        1;
+
+    filter:
+        none;
+
+    transform:
+        translate3d(
+            4px,
+            0,
+            0
+        );
+
+}
+
+
+/* =====================================================
+   LAUNCHER STATUS
+===================================================== */
+
+.about-launcher-status {
+
+    display:
+        inline-block;
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    margin-right:
+        6px;
+
+    flex-shrink:
+        0;
+
+    background:
+        currentColor;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    nav {
+
+        padding:
+            14px 15px;
+
+        gap:
+            14px;
+
+    }
+
+
+    nav a {
+
+        font-size:
+            10px;
+
+    }
+
+
+    #aboutLayer3Image {
+
+        width:
+            145px;
+
+    }
+
+
+    .about-tab {
+
+        min-width:
+            72px;
+
+        min-height:
+            60px;
+
+    }
+
+
+    .about-tab-header {
+
+        min-height:
+            18px;
+
+        padding:
+            2px 4px;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .about-tab-content {
+
+        padding:
+            6px;
+
+        font-size:
+            10px;
+
+    }
+
+
+    .about-launcher-item {
+
+        padding:
+            6px 9px;
+
+        font-size:
+            13.8px;
+
+    }
+
+
+    #aboutTabLauncher {
+
+        gap:
+            4px;
+
+        left:
+            8px;
+
+        bottom:
+            8px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONE
+===================================================== */
+
+@media (max-width: 430px) {
+
+    nav {
+
+        gap:
+            9px;
+
+    }
+
+
+    nav a {
+
+        font-size:
+            8px;
+
+    }
+
+
+    #aboutLayer3Image {
+
+        width:
+            125px;
+
+    }
+
+
+    .about-tab {
+
+        min-width:
+            68px;
+
+    }
+
+
+    .about-tab-header {
+
+        font-size:
+            6.5px;
+
+    }
+
+
+    .about-tab-content {
+
+        font-size:
+            6.5px;
+
+        line-height:
+            1.25;
+
+    }
+
+
+    .tab-read-more,
+    .tab-link,
+    .obsession {
+
+        font-size:
+            6px;
+
+    }
+
+
+    .dna-label {
+
+        font-size:
+            6px;
+
+    }
+
+
+    .about-launcher-item {
+
+        padding:
+            5px 7px;
+
+        font-size:
+            9px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONE
+===================================================== */
+
+@media (max-width: 350px) {
+
+    .about-launcher-item {
+
+        font-size:
+            8px;
+
+        padding:
+            5px 6px;
+
+    }
+
+
+    #aboutLayer3Image {
+
+        width:
+            110px;
+
+    }
+
+}

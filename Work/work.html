@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Work</title>
+
+
+    <!-- =====================================================
+         LOAD
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../Load/load.css"
+    >
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../Nav/nav.css"
+    >
+
+
+    <!-- =====================================================
+         WORK
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="work.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="content.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav
+        id="nav"
+        class="nav"
+    >
+
+        <div
+            id="navTrigger"
+            class="nav-trigger"
+        ></div>
+
+
+        <div
+            id="navBox"
+            class="nav-box"
+        >
+
+
+            <!-- LEFT -->
+
+            <button
+                id="navLeft"
+                class="nav-arrow nav-left"
+                type="button"
+            >
+
+                <img
+                    src="../Images/Nav/Left.png"
+                    alt=""
+                >
+
+            </button>
+
+
+            <!-- PAGES -->
+
+            <div class="nav-items">
+
+
+                <a
+                    class="nav-item"
+                    href="../Home/index.html"
+                >
+
+                    <img
+                        src="../Images/Nav/Home.png"
+                        alt="Home"
+                    >
+
+                </a>
+
+
+                <a
+                    class="nav-item"
+                    href="../About/about.html"
+                >
+
+                    <img
+                        src="../Images/Nav/About.png"
+                        alt="About"
+                    >
+
+                </a>
+
+
+                <a
+                    class="nav-item"
+                    href="../Contact/contact.html"
+                >
+
+                    <img
+                        src="../Images/Nav/Contact.png"
+                        alt="Contact"
+                    >
+
+                </a>
+
+
+                <a
+                    class="nav-item"
+                    href="../Work/work.html"
+                >
+
+                    <img
+                        src="../Images/Nav/Work.png"
+                        alt="Work"
+                    >
+
+                </a>
+
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <button
+                id="navRight"
+                class="nav-arrow nav-right"
+                type="button"
+            >
+
+                <img
+                    src="../Images/Nav/Right.png"
+                    alt=""
+                >
+
+            </button>
+
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         DEVIL BUTTON
+    ====================================================== -->
+
+    <button
+        id="devilButton"
+        class="devil-button"
+        type="button"
+        aria-label="Toggle navigation"
+    >
+
+        <img
+            id="devilIcon"
+            class="devil-icon"
+            src="../Images/Nav/off.png"
+            alt=""
+        >
+
+    </button>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- DITHER BACKGROUND -->
+
+        <canvas
+            id="ditherCanvas"
+        ></canvas>
+
+
+
+        <!-- =================================================
+             MAIN ASSET
+        ================================================== -->
+
+        <div id="mainasset-wrapper">
+
+
+            <img
+                id="mainasset"
+                src="../Images/Work/mainassset.png"
+                alt=""
+            >
+
+
+            <!-- PROJECT THUMBNAIL -->
+
+            <div
+                class="project-thumbnail"
+                id="projectThumbnail"
+            >
+
+                <img
+                    id="thumbnailImage"
+                    src="../Images/Work/Content/Thumbnail/Surf.jpeg"
+                    alt=""
+                >
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             BLOOD PACK
+        ================================================== -->
+
+        <img
+            id="bloodpack"
+            src="../Images/Work/bloodpacksmall.png"
+            alt=""
+        >
+
+
+
+        <!-- =================================================
+             LINE
+        ================================================== -->
+
+        <img
+            id="line"
+            src="../Images/Work/line.png"
+            alt=""
+        >
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <div id="intro">
+
+
+        <video
+            id="intro-video"
+            autoplay
+            muted
+            playsinline
+            loop>
+
+            <source
+                src="../Images/Work/ocean street_1.mp4"
+                type="video/mp4"
+            >
+
+        </video>
+
+
+        <button
+            id="intro-button"
+            type="button"
+        >
+
+            <img
+                src="../Images/Work/suitcase.png"
+                alt="button"
+            >
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         BLACK FADE
+    ====================================================== -->
+
+    <div id="black-fade"></div>
+
+
+
+    <!-- =====================================================
+         PROJECT NAVIGATION
+    ====================================================== -->
+
+    <div
+        class="project-navigation"
+        id="projectNavigation"
+    >
+
+        <div
+            class="project-window"
+            id="projectWindow"
+        >
+
+            <div
+                class="project-list"
+                id="projectList"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         PROJECT MODAL
+    ====================================================== -->
+
+    <div
+        class="project-overlay"
+        id="projectOverlay"
+    >
+
+        <div
+            class="project-modal"
+            id="projectModal"
+        >
+
+
+            <!-- CLOSE -->
+
+            <button
+                class="project-close"
+                id="projectClose"
+                type="button"
+                aria-label="Close project"
+            >
+                ✓
+            </button>
+
+
+
+            <!-- =================================================
+                 MODAL IMAGE
+            ================================================== -->
+
+            <div class="modal-image-wrapper">
+
+                <img
+                    id="modalImage"
+                    src=""
+                    alt=""
+                >
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MODAL INFORMATION
+            ================================================== -->
+
+            <div class="modal-information">
+
+
+                <!-- PROJECT NUMBER -->
+
+                <div
+                    class="modal-number"
+                    id="modalNumber"
+                >
+                    01
+                </div>
+
+
+
+                <!-- PROJECT TITLE -->
+
+                <h2 id="modalTitle">
+                    Surf
+                </h2>
+
+
+
+                <!-- SEPARATOR -->
+
+                <div class="modal-line"></div>
+
+
+
+                <!-- DESCRIPTION -->
+
+                <p id="modalDescription">
+                    Project description.
+                </p>
+
+
+
+                <!-- META -->
+
+                <div
+                    class="modal-meta"
+                    id="modalMeta"
+                >
+                    Digital Media / 2026
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="work.js"></script>
+
+    <script src="content.js"></script>
+
+    <script src="../Load/load.js"></script>
+
+    <script src="../Nav/nav.js"></script>
+
+
+</body>
+
+</html>

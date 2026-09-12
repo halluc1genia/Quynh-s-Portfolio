@@ -1,0 +1,1129 @@
+@import url(
+    'https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap'
+);
+
+
+/* =====================================================
+   BASE
+===================================================== */
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+main {
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: black;
+}
+
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+#background {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: black;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   DITHER
+===================================================== */
+
+#dither {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   BLACK BACKING
+===================================================== */
+
+#faceBacking,
+#handBacking {
+
+    position: absolute;
+
+    display: block;
+
+    pointer-events: none;
+
+    transform: none;
+}
+
+
+
+/* =====================================================
+   ASSETS
+===================================================== */
+
+#faceCanvas,
+#handCanvas {
+
+    position: absolute;
+
+    display: block;
+
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   FACE BACKING
+===================================================== */
+
+#faceBacking {
+
+    width: clamp(
+        400px,
+        31.5vw,
+        525px
+    );
+
+    height: auto;
+
+    left: 50%;
+    top: calc(50% - 5px);
+
+    z-index: 2;
+}
+
+
+
+/* =====================================================
+   FACE
+===================================================== */
+
+#faceCanvas {
+
+    width: clamp(
+        370px,
+        65vw,
+        700px
+    );
+
+    height: auto;
+
+    left: 45%;
+    top: 53%;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 3;
+}
+
+
+
+/* =====================================================
+   HAND BACKING
+===================================================== */
+
+#handBacking {
+
+    width: clamp(
+        400px,
+        42vw,
+        945px
+    );
+
+    height: auto;
+
+    left: 50%;
+    top: 52%;
+
+    z-index: 6;
+}
+
+
+
+/* =====================================================
+   HAND
+===================================================== */
+
+#handCanvas {
+
+    width: clamp(
+        500px,
+        80vw,
+        900px
+    );
+
+    height: auto;
+
+    left: 50%;
+    top: 52%;
+
+    transform:
+        translate(-10%, -25%);
+
+    z-index: 6;
+}
+
+
+
+/* =====================================================
+   NAME
+===================================================== */
+
+#nameLogo {
+
+    position: fixed;
+
+    top: 6px;
+    left: 15px;
+
+    width: clamp(
+        140px,
+        20vw,
+        250px
+    );
+
+    height: auto;
+
+    z-index: 100;
+
+    transform-origin: center center;
+
+    image-rendering: pixelated;
+
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   EYE BOX
+===================================================== */
+
+.eye-box {
+
+    position: fixed;
+
+    left: 43%;
+    top: 42.85%;
+
+    width: 20%;
+
+    height: clamp(
+        15%,
+        19vh,
+        25%
+    );
+
+    z-index: 4;
+
+    overflow: hidden;
+
+    background-color: transparent;
+
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   TABLET / SMALL LAPTOP
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .eye-box {
+        width: 22%;
+    }
+
+}
+
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1024px) {
+
+    .eye-box {
+        width: 22%;
+    }
+
+    #righteye {
+        left: 56%;
+    }
+
+}
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .eye-box {
+        width: 24%;
+    }
+
+    #righteye {
+        left: 58%;
+    }
+
+}
+
+
+
+/* =====================================================
+   RIGHT EYE
+===================================================== */
+
+#righteye {
+
+    position: absolute;
+
+    width: clamp(
+        120px,
+        20vw,
+        220px
+    );
+
+    height: auto;
+
+    top: 50%;
+    left: 52%;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   FLOATING ASSETS
+===================================================== */
+
+.floating-asset {
+
+    position: absolute;
+
+    width: 10vw;
+
+    height: auto;
+
+    min-width: 25px;
+    max-width: 60px;
+
+    display: block;
+
+    user-select: none;
+
+    pointer-events: none;
+
+    z-index: 20;
+
+    will-change: left, top;
+
+    image-rendering: auto;
+}
+
+
+
+/* =====================================================
+   MOBILE FLOATING ASSETS
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .floating-asset {
+
+        width: 10vw;
+
+        z-index: 3;
+
+        min-width: 35px;
+        max-width: 70px;
+    }
+
+}
+
+
+
+/* =====================================================
+   SPEECH BUBBLES
+===================================================== */
+
+.speech-bubble {
+
+    position: absolute;
+
+    display: block;
+
+    z-index: 30;
+
+    user-select: none;
+}
+
+
+
+/* =====================================================
+   BUBBLE IMAGE
+===================================================== */
+
+.speech-bubble > img {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   BUBBLE TEXT
+===================================================== */
+
+.bubble-text {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    font-family:
+        "Pixelify Sans",
+        monospace;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    padding: 12%;
+}
+
+
+
+/* =====================================================
+   CLOUD RIGHT
+===================================================== */
+
+#cloudright {
+
+    width: clamp(
+        150px,
+        20vw,
+        250px
+    );
+
+    aspect-ratio: 1 / 1;
+
+    left: clamp(
+        67%,
+        71vw,
+        120%
+    );
+
+    top: clamp(
+        10%,
+        20vh,
+        30%
+    );
+}
+
+
+
+/* =====================================================
+   STAR RIGHT
+===================================================== */
+
+#starright {
+
+    width: clamp(
+        110px,
+        15vw,
+        200px
+    );
+
+    aspect-ratio: 1 / 1;
+
+    left: 57.5%;
+    top: 6%;
+}
+
+
+
+/* =====================================================
+   CLOUD LEFT
+===================================================== */
+
+#cloudleft {
+
+    width: clamp(
+        150px,
+        20vw,
+        250px
+    );
+
+    aspect-ratio: 1 / 1;
+
+    left: 3%;
+    top: 73%;
+}
+
+
+
+/* =====================================================
+   ABOUT LINK
+===================================================== */
+
+.about-bubble-link {
+
+    color: rgb(37, 35, 35);
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+}
+
+
+.about-bubble-link:hover {
+
+    text-decoration: underline;
+}
+
+
+.red-word {
+
+    color: #f80e00;
+
+    text-decoration: underline;
+}
+
+
+
+/* =====================================================
+   MOOD BUTTON
+===================================================== */
+
+.mood-link {
+
+    appearance: none;
+
+    border: 0;
+
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+
+    color: #f80e00;
+
+    font: inherit;
+
+    line-height: inherit;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+}
+
+
+.mood-link:hover {
+
+    color: #f80e00;
+
+    text-decoration: underline;
+}
+
+
+
+/* =====================================================
+   MOOD MODAL
+===================================================== */
+
+.mood-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(
+        0,
+        0,
+        0,
+        0.65
+    );
+
+    z-index: 9999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.15s ease,
+        visibility 0.15s ease;
+}
+
+
+
+/* =====================================================
+   OPEN
+===================================================== */
+
+.mood-modal.is-open {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+
+/* =====================================================
+   MOOD WINDOW
+===================================================== */
+
+.mood-window {
+
+    position: relative;
+
+    width: min(
+        560px,
+        82vw
+    );
+
+    max-height: 75vh;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    background: black;
+
+    border: 2px solid white;
+
+    color: white;
+
+    font-family:
+        "Pixelify Sans",
+        monospace;
+
+    image-rendering: pixelated;
+}
+
+
+
+/* =====================================================
+   MOOD HEADER / TAB TITLE
+===================================================== */
+
+.mood-header {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding:
+        20px
+        55px
+        14px
+        24px;
+
+    border-bottom: 1px solid white;
+}
+
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+#moodTitle {
+
+    margin: 0;
+
+    color: white;
+
+    font-family:
+        "Pixelify Sans",
+        monospace;
+
+    font-size: clamp(
+        20px,
+        3vw,
+        32px
+    );
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    text-align: left;
+}
+
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.mood-content {
+
+    position: relative;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding:
+        22px
+        24px
+        30px;
+
+    color: white;
+
+    font-family:
+        "Pixelify Sans",
+        monospace;
+}
+
+
+
+/* =====================================================
+   FEELING TEXT
+===================================================== */
+
+.mood-feeling {
+
+    margin: 0;
+
+    text-align: center;
+
+    color: white;
+
+    font-family:
+        "Pixelify Sans",
+        monospace;
+
+    font-size: clamp(
+        16px,
+        2.2vw,
+        23px
+    );
+
+    line-height: 1;
+}
+
+
+
+/* =====================================================
+   MASCOT AREA
+===================================================== */
+
+.mood-mascot-area {
+
+    position: relative;
+
+    width: 100%;
+
+    height: clamp(
+        220px,
+        32vw,
+        320px
+    );
+
+    margin-top: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* =====================================================
+   MASCOT
+===================================================== */
+
+.mood-mascot {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    /*
+        CHANGE MASCOT SIZE HERE
+    */
+
+    width: clamp(
+        90px,
+        10vw,
+        110px
+    );
+
+    height: auto;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    image-rendering: auto;
+}
+
+
+
+/* =====================================================
+   FLY CONTAINER
+===================================================== */
+
+.mood-fly {
+
+    position: absolute;
+
+    /*
+        Position of the whole fly animation
+    */
+
+    left: 50%;
+    top: 50%;
+
+    width: 1px;
+    height: 1px;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   ALL FLY FRAMES
+===================================================== */
+
+.mood-fly-frame {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    height: auto;
+
+    transform:
+        translate(-50%, -50%);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: none;
+
+    image-rendering: auto;
+}
+
+
+
+/* =====================================================
+   FLY 1 SIZE
+===================================================== */
+
+.mood-fly-1 {
+
+    /*
+        CHANGE FLY 1 WIDTH HERE
+    */
+
+    width: 320px;
+}
+
+
+
+/* =====================================================
+   FLY 2 SIZE
+===================================================== */
+
+.mood-fly-2 {
+
+    /*
+        CHANGE FLY 2 WIDTH HERE
+    */
+
+    width: 230px;
+}
+
+
+
+/* =====================================================
+   FLY 3 SIZE
+===================================================== */
+
+.mood-fly-3 {
+
+    /*
+        CHANGE FLY 3 WIDTH HERE
+    */
+
+    width: 145px;
+}
+
+
+
+/* =====================================================
+   ACTIVE FRAME
+===================================================== */
+
+.mood-fly-frame.is-active {
+
+    opacity: 1;
+}
+
+
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
+
+.mood-close {
+
+    position: absolute;
+
+    top: 8px;
+    right: 10px;
+
+    width: 32px;
+    height: 32px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: white;
+
+    font-family:
+        "Pixelify Sans",
+        monospace;
+
+    font-size: 28px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+
+.mood-close:hover {
+
+    color: #f80e00;
+}
+
+
+
+/* =====================================================
+   TEXT POSITION
+===================================================== */
+
+#cloudright .bubble-text {
+
+    transform:
+        translate(
+            0px,
+            5px
+        );
+}
+
+
+#cloudleft .bubble-text {
+
+    transform:
+        translate(
+            -6px,
+            11px
+        );
+}
+
+
+#starright .bubble-text {
+
+    transform:
+        translate(
+            8px,
+            -10px
+        );
+
+    font-size:
+        clamp(
+            15px,
+            2vw,
+            25px
+        ) !important;
+}
+
+
+
+/* =====================================================
+   MOBILE MODAL
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .mood-window {
+
+        width: 88vw;
+
+        max-height: 78vh;
+    }
+
+
+    .mood-header {
+
+        padding:
+            18px
+            48px
+            12px
+            18px;
+    }
+
+
+    #moodTitle {
+
+        font-size: 23px;
+    }
+
+
+    .mood-content {
+
+        padding:
+            18px
+            18px
+            24px;
+    }
+
+
+    .mood-feeling {
+
+        font-size: 16px;
+    }
+
+
+    .mood-mascot-area {
+
+        height: 230px;
+    }
+
+
+    /*
+        Mobile fly sizes
+        can ALSO be changed individually.
+    */
+
+    .mood-fly-1 {
+        width: 270px;
+    }
+
+
+    .mood-fly-2 {
+        width: 200px;
+    }
+
+
+    .mood-fly-3 {
+        width: 120px;
+    }
+
+
+    .mood-mascot {
+
+        width: 110px;
+    }
+
+}

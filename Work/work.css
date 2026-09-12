@@ -1,0 +1,337 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background: #000;
+}
+
+
+/* =========================================================
+   CANVAS
+========================================================= */
+
+#ditherCanvas {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: block;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   OPTIONAL CONTENT
+========================================================= */
+
+.content {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   MAIN ASSET WRAPPER
+===================================================== */
+
+#mainasset-wrapper {
+
+    position: absolute;
+
+    top: 25%;
+    left: 50%;
+
+    width: 80%;
+
+    transform: translateX(-50%);
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   MAIN ASSET
+===================================================== */
+
+#mainasset {
+
+    position: relative;
+
+    top: auto;
+    left: auto;
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    animation: pulseMain 1s infinite;
+
+    transform-origin: center center;
+}
+
+
+/* =====================================================
+   BLOOD PACK
+===================================================== */
+
+#bloodpack {
+
+    position: absolute;
+
+    top: -2%;
+    left: 60%;
+
+    width: 55%;
+    height: auto;
+
+    z-index: 3;
+
+    animation: pulseBlood 1s infinite;
+}
+
+
+/* =====================================================
+   PULSE
+===================================================== */
+
+@keyframes pulseMain {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+}
+
+
+@keyframes pulseBlood {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+
+}
+
+
+/* =====================================================
+   LINE
+===================================================== */
+
+#line {
+
+    position: absolute;
+
+    top: 23.8%;
+    left: 80.2%;
+
+    width: 7%;
+    height: auto;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   BLACK FADE
+   ---------------------------------------------------------
+   SITS BEHIND THE ENTIRE INTRO
+========================================================= */
+
+#black-fade {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #000;
+
+    z-index: 99;
+
+    pointer-events: none;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 1.5s ease,
+        visibility 1.5s ease;
+}
+
+
+#black-fade.hide {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   INTRO OVERLAY
+   ---------------------------------------------------------
+   SITS ABOVE BLACK FADE
+========================================================= */
+
+#intro {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #000;
+
+    z-index: 100;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+
+/* =========================================================
+   INTRO VIDEO
+   ---------------------------------------------------------
+   VIDEO = LAYER 1
+========================================================= */
+
+#intro-video {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    image-rendering: pixelated;
+
+    transform: scale(0.7);
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   INTRO BUTTON
+   ---------------------------------------------------------
+   BUTTON = LAYER 2
+   ALWAYS ABOVE VIDEO
+========================================================= */
+
+#intro-button {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: clamp(150px, 17vw, 250px);
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+/* =========================================================
+   BUTTON IMAGE
+========================================================= */
+
+#intro-button img {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    image-rendering: pixelated;
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+#intro-button:hover {
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.08);
+}
+
+
+/* =========================================================
+   INTRO HIDE
+========================================================= */
+
+#intro.hide {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}

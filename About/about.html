@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>About</title>
+
+
+    <!-- =====================================================
+         LOAD
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../Load/load.css"
+    >
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../Nav/nav.css"
+    >
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="about.css"
+    >
+
+
+    <!-- =====================================================
+         FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+    crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav
+        id="nav"
+        class="nav"
+    >
+
+        <div
+            id="navTrigger"
+            class="nav-trigger"
+        ></div>
+
+
+        <div
+            id="navBox"
+            class="nav-box"
+        >
+
+
+            <!-- LEFT -->
+
+            <button
+                id="navLeft"
+                class="nav-arrow nav-left"
+                type="button"
+            >
+
+                <img
+                    src="../Images/Nav/Left.png"
+                    alt=""
+                >
+
+            </button>
+
+
+            <!-- PAGES -->
+
+            <div class="nav-items">
+
+
+                <a
+                    class="nav-item"
+                    href="../Home/index.html"
+                >
+
+                    <img
+                        src="../Images/Nav/Home.png"
+                        alt="Home"
+                    >
+
+                </a>
+
+
+                <a
+                    class="nav-item"
+                    href="../About/about.html"
+                >
+
+                    <img
+                        src="../Images/Nav/About.png"
+                        alt="About"
+                    >
+
+                </a>
+
+
+                <a
+                    class="nav-item"
+                    href="../Contact/contact.html"
+                >
+
+                    <img
+                        src="../Images/Nav/Contact.png"
+                        alt="Contact"
+                    >
+
+                </a>
+
+
+                <a
+                    class="nav-item"
+                    href="../Work/work.html"
+                >
+
+                    <img
+                        src="../Images/Nav/Work.png"
+                        alt="Work"
+                    >
+
+                </a>
+
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <button
+                id="navRight"
+                class="nav-arrow nav-right"
+                type="button"
+            >
+
+                <img
+                    src="../Images/Nav/Right.png"
+                    alt=""
+                >
+
+            </button>
+
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         DEVIL BUTTON
+    ====================================================== -->
+
+    <button
+        id="devilButton"
+        class="devil-button"
+        type="button"
+        aria-label="Toggle navigation"
+    >
+
+        <img
+            id="devilIcon"
+            class="devil-icon"
+            src="../Images/Nav/off.png"
+            alt=""
+        >
+
+    </button>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             LAYER 1
+        ================================================== -->
+
+        <div class="about-layer about-layer-1">
+
+            <img
+                id="aboutLayer1Image"
+                src="../Images/About/BG + Subject.png"
+                alt=""
+            >
+
+            <canvas
+                id="aboutLayer1Canvas"
+            ></canvas>
+
+        </div>
+
+
+
+        <!-- =================================================
+             LAYER 3
+        ================================================== -->
+
+        <div class="about-layer about-layer-3">
+
+
+            <!-- ORIGINAL SUBJECT -->
+
+            <img
+                id="aboutLayer3Image"
+                src="../Images/About/Main Subject.png"
+                alt="Main Subject"
+            >
+
+
+            <!-- RED DITHER -->
+
+            <canvas
+                id="aboutLayer3Canvas"
+            ></canvas>
+
+
+
+            <!-- =================================================
+                 SVG SYSTEM
+            ================================================== -->
+
+            <svg
+                id="aboutLayer3SVG"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+
+                <defs>
+
+
+                    <!-- DISPLACEMENT -->
+
+                    <filter
+                        id="layer3Displacement"
+                        x="-30%"
+                        y="-30%"
+                        width="160%"
+                        height="160%"
+                    >
+
+                        <feTurbulence
+                            id="layer3Noise"
+                            type="fractalNoise"
+                            baseFrequency="0.025"
+                            numOctaves="2"
+                            seed="4"
+                            result="noise"
+                        ></feTurbulence>
+
+
+                        <feDisplacementMap
+                            id="layer3DisplacementMap"
+                            in="SourceGraphic"
+                            in2="noise"
+                            scale="0"
+                            xChannelSelector="R"
+                            yChannelSelector="G"
+                        ></feDisplacementMap>
+
+                    </filter>
+
+
+
+                    <!-- CONNECTOR GLOW -->
+
+                    <filter
+                        id="lineGlow"
+                        x="-50%"
+                        y="-50%"
+                        width="200%"
+                        height="200%"
+                    >
+
+                        <feGaussianBlur
+                            stdDeviation="0.7"
+                            result="blur"
+                        ></feGaussianBlur>
+
+
+                        <feMerge>
+
+                            <feMergeNode
+                                in="blur"
+                            ></feMergeNode>
+
+                            <feMergeNode
+                                in="SourceGraphic"
+                            ></feMergeNode>
+
+                        </feMerge>
+
+                    </filter>
+
+                </defs>
+
+
+                <!-- CONNECTOR LINES -->
+
+                <g
+                    id="layer3Connections"
+                ></g>
+
+
+                <!-- PIXEL FRAME -->
+
+                <g
+                    id="layer3Frame"
+                ></g>
+
+            </svg>
+
+
+
+            <!-- FLOATING TABS -->
+
+            <div
+                id="aboutTabs"
+                class="about-tabs"
+            ></div>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="aboutlayer1.js"></script>
+
+    <script src="aboutlayer3.js"></script>
+
+    <script src="../Load/load.js"></script>
+
+    <script src="../Nav/nav.js"></script>
+
+
+</body>
+
+</html>

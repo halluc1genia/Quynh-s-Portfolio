@@ -1,0 +1,1290 @@
+@import url(
+    'https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap'
+);
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100%;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background: #000;
+
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+#BG {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    height: auto;
+
+    z-index: -1;
+
+}
+
+
+/* =====================================================
+   RUN
+===================================================== */
+
+/*
+   Position is kept exactly the same.
+*/
+
+#run-wrapper {
+
+    position: absolute;
+
+    top: clamp(12%, 16vw, 34%);
+
+    left: 57%;
+
+    width: 37%;
+
+    height: auto;
+
+    animation:
+        runEnter
+        1.4s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+
+}
+
+
+#run {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    filter:
+        drop-shadow(0 0 2px #0062FF)
+        drop-shadow(0 0 7px #0062FF);
+
+    animation:
+        assetFloat
+        5.2s
+        ease-in-out
+        1.4s
+        infinite;
+
+}
+
+
+/* =====================================================
+   RUN ENTER
+   Right → left
+===================================================== */
+
+@keyframes runEnter {
+
+    0% {
+
+        transform:
+            translateX(120vw);
+
+    }
+
+    80% {
+
+        transform:
+            translateX(-8px);
+
+    }
+
+    100% {
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   STAIR
+===================================================== */
+
+#stair-wrapper {
+
+    position: absolute;
+
+    top: clamp(30%, 40vw, 80%);
+
+    right: -8%;
+
+    width: 35%;
+
+    height: auto;
+
+    animation:
+        stairEnter
+        1.4s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+
+}
+
+
+#stair {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    animation:
+        float
+        4.7s
+        ease-in-out
+        0.9s
+        infinite;
+
+}
+
+
+/* =====================================================
+   STAIR ENTER
+===================================================== */
+
+@keyframes stairEnter {
+
+    0% {
+
+        transform:
+            translateX(120vw);
+
+    }
+
+    80% {
+
+        transform:
+            translateX(-8px);
+
+    }
+
+    100% {
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   FLOAT
+===================================================== */
+
+@keyframes float {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px);
+
+    }
+
+}
+
+
+/* =====================================================
+   TAB
+===================================================== */
+
+#tab {
+
+    position: absolute;
+
+    top: clamp(15%, 20vw, 70%);
+
+    left: -11%;
+
+    width: 60%;
+
+    image-rendering: pixelated;
+
+    height: auto;
+
+    animation:
+        float
+        4.7s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =====================================================
+   STUMBLE
+===================================================== */
+
+#stumble-wrapper {
+
+    position: absolute;
+
+    top: clamp(30%, 45vw, 97%);
+
+    left: 5%;
+
+    width: 49%;
+
+    height: auto;
+
+    animation:
+        stumbleEnter
+        1.4s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+
+}
+
+
+#stumble-fall {
+
+    width: 100%;
+
+    height: auto;
+
+    animation:
+        stumbleFall
+        1.3s
+        ease-out
+        1.4s
+        forwards;
+
+}
+
+
+#stumble {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    filter:
+        drop-shadow(0 0 2px #0062FF)
+        drop-shadow(0 0 7px #0062FF);
+
+    animation:
+        assetFloat
+        5.2s
+        ease-in-out
+        2.7s
+        infinite;
+
+}
+
+
+/* =====================================================
+   STUMBLE ENTER
+   Left → right
+===================================================== */
+
+@keyframes stumbleEnter {
+
+    0% {
+
+        transform:
+            translateX(-120vw);
+
+    }
+
+    80% {
+
+        transform:
+            translateX(8px);
+
+    }
+
+    100% {
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   STUMBLE / BALANCE
+===================================================== */
+
+@keyframes stumbleFall {
+
+    0% {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    22% {
+
+        transform:
+            rotate(8deg);
+
+    }
+
+    40% {
+
+        transform:
+            rotate(-5deg);
+
+    }
+
+    57% {
+
+        transform:
+            rotate(4deg);
+
+    }
+
+    72% {
+
+        transform:
+            rotate(-2deg);
+
+    }
+
+    86% {
+
+        transform:
+            rotate(1deg);
+
+    }
+
+    100% {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   FRIGHTEN
+===================================================== */
+
+#frighten-wrapper {
+
+    position: absolute;
+
+    top: clamp(61%, 85vw, 180%);
+
+    left: 20%;
+
+    width: 56%;
+
+    height: auto;
+
+    animation:
+        frightenEnter
+        1.4s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+
+}
+
+
+#frighten-fall {
+
+    width: 100%;
+
+    height: auto;
+
+    animation:
+        frightenFall
+        1.3s
+        ease-out
+        1.4s
+        forwards;
+
+}
+
+
+#frighten {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    filter:
+        drop-shadow(0 0 2px #0062FF)
+        drop-shadow(0 0 7px #0062FF);
+
+    animation:
+        assetFloat
+        5.2s
+        ease-in-out
+        2.7s
+        infinite;
+
+}
+
+
+/* =====================================================
+   FRIGHTEN ENTER
+   Left → right
+===================================================== */
+
+@keyframes frightenEnter {
+
+    0% {
+
+        transform:
+            translateX(-120vw);
+
+    }
+
+    80% {
+
+        transform:
+            translateX(8px);
+
+    }
+
+    100% {
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   FRIGHTEN FALL / ROTATE
+===================================================== */
+
+@keyframes frightenFall {
+
+    0% {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    25% {
+
+        transform:
+            rotate(30deg);
+
+    }
+
+    45% {
+
+        transform:
+            rotate(-10deg);
+
+    }
+
+    65% {
+
+        transform:
+            rotate(10deg);
+
+    }
+
+    82% {
+
+        transform:
+            rotate(-15deg);
+
+    }
+
+    100% {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   ASSET FLOAT
+===================================================== */
+
+@keyframes assetFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-4px);
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTACT LOGOS
+===================================================== */
+
+
+/* =====================================================
+   FACEBOOK
+===================================================== */
+
+#fb {
+
+    position: absolute;
+
+    top: clamp(74%, 104vw, 220%);
+
+    left: 27%;
+
+    width: 7%;
+
+    height: auto;
+
+    animation:
+        contactFloat
+        5.2s
+        ease-in-out
+        infinite;
+
+    filter:
+        drop-shadow(
+            0 0 1px
+            #0062FF
+        )
+        drop-shadow(
+            0 0 3px
+            rgba(0, 98, 255, 0.45)
+        )
+        drop-shadow(
+            0 0 7px
+            rgba(0, 98, 255, 0.18)
+        );
+
+}
+
+
+/* =====================================================
+   INSTAGRAM
+===================================================== */
+
+#insta {
+
+    position: absolute;
+
+    top: clamp(49%, 68vw, 150%);
+
+    left: 40%;
+
+    width: 7%;
+
+    height: auto;
+
+    animation:
+        contactFloat
+        5.2s
+        ease-in-out
+        infinite;
+
+    filter:
+        drop-shadow(
+            0 0 1px
+            #0062FF
+        )
+        drop-shadow(
+            0 0 4px
+            rgba(0, 98, 255, 0.60)
+        )
+        drop-shadow(
+            0 0 10px
+            rgba(0, 98, 255, 0.30)
+        );
+
+}
+
+
+/* =====================================================
+   MAIL
+===================================================== */
+
+#mail {
+
+    position: absolute;
+
+    top: clamp(17%, 24vw, 100%);
+
+    left: 50%;
+
+    width: 7%;
+
+    height: auto;
+
+    animation:
+        contactFloat
+        5.2s
+        ease-in-out
+        infinite;
+
+    filter:
+        drop-shadow(
+            0 0 1px
+            #0062FF
+        )
+        drop-shadow(
+            0 0 3px
+            rgba(0, 98, 255, 0.45)
+        )
+        drop-shadow(
+            0 0 7px
+            rgba(0, 98, 255, 0.18)
+        );
+
+}
+
+
+/* =====================================================
+   VERY LIGHT LOGO FLOAT
+===================================================== */
+
+@keyframes contactFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-4px);
+
+    }
+
+}
+
+
+/* =====================================================
+   CONTACT LINKS
+===================================================== */
+
+#fb-link,
+#insta-link,
+#mail-link {
+
+    position: static;
+
+}
+
+
+/* =====================================================
+   CONTACT TEXT
+===================================================== */
+
+.contact-text {
+
+    position: absolute;
+
+    z-index: 100;
+
+    font-family:
+        "Pixelify Sans",
+        sans-serif;
+
+    font-size:
+        clamp(15px, 2vw, 28px);
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: 0.01em;
+
+    white-space: nowrap;
+
+    text-decoration: none;
+
+    opacity: 0;
+
+    pointer-events: auto;
+
+    animation:
+        none;
+
+}
+
+
+/* =====================================================
+   FACEBOOK TEXT
+===================================================== */
+
+#fb-text {
+
+    color: #0062FF;
+
+    clip-path:
+        inset(
+            0 0 0 100%
+        );
+
+}
+
+
+/* =====================================================
+   INSTAGRAM TEXT
+===================================================== */
+
+#insta-text {
+
+    color: #FFFFFF;
+
+    clip-path:
+        inset(
+            0 100% 0 0
+        );
+
+}
+
+
+/* =====================================================
+   MAIL TEXT
+===================================================== */
+
+#mail-text {
+
+    color: #FFFFFF;
+
+    clip-path:
+        inset(
+            0 0 0 100%
+        );
+
+}
+
+
+/* =====================================================
+   TEXT FLOAT
+===================================================== */
+
+@keyframes textFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-4px);
+
+    }
+
+}
+
+
+/* =====================================================
+   FACEBOOK TYPING
+===================================================== */
+
+#fb-text.typing {
+
+    opacity: 1;
+
+    animation:
+        typeLeft
+        0.9s
+        steps(11, end)
+        forwards,
+        textFloat
+        5.2s
+        ease-in-out
+        0s
+        infinite;
+
+}
+
+
+/* =====================================================
+   INSTAGRAM TYPING
+===================================================== */
+
+#insta-text.typing {
+
+    opacity: 1;
+
+    animation:
+        typeRight
+        1s
+        steps(13, end)
+        forwards,
+        textFloat
+        4.7s
+        ease-in-out
+        0s
+        infinite;
+
+}
+
+
+/* =====================================================
+   EMAIL TYPING
+===================================================== */
+
+#mail-text.typing {
+
+    opacity: 1;
+
+    animation:
+        typeMail
+        2s
+        steps(29, end)
+        forwards,
+        textFloat
+        4.87s
+        ease-in-out
+        0s
+        infinite;
+
+}
+
+
+/* =====================================================
+   TYPE LEFT
+===================================================== */
+
+@keyframes typeLeft {
+
+    from {
+
+        clip-path:
+            inset(
+                0 0 0 100%
+            );
+
+    }
+
+    to {
+
+        clip-path:
+            inset(
+                0 0 0 0
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   TYPE RIGHT
+===================================================== */
+
+@keyframes typeRight {
+
+    from {
+
+        clip-path:
+            inset(
+                0 100% 0 0
+            );
+
+    }
+
+    to {
+
+        clip-path:
+            inset(
+                0 0 0 0
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   EMAIL TYPE
+===================================================== */
+
+@keyframes typeMail {
+
+    from {
+
+        clip-path:
+            inset(
+                0 0 0 100%
+            );
+
+    }
+
+    to {
+
+        clip-path:
+            inset(
+                0 0 0 0
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   TEXT GLOW
+===================================================== */
+
+#insta-text.typing,
+#mail-text.typing {
+
+    text-shadow:
+        0 0 9px #0062FF,
+        0 0 10px rgba(0, 98, 255, 0.45),
+        0 0 15px rgba(0, 98, 255, 0.18);
+
+}
+
+
+/* =====================================================
+   FACEBOOK TEXT GLOW
+===================================================== */
+
+#fb-text.typing {
+
+    text-shadow:
+        0 0 1px #0062FF,
+        0 0 2px rgba(0, 98, 255, 0.60),
+        0 0 3px rgba(0, 98, 255, 0.30);
+
+}
+
+
+/* =====================================================
+   HOVER TEXT
+===================================================== */
+
+.contact-text:hover {
+
+    opacity: 0.6;
+
+}
+
+
+/* =====================================================
+   SUITCASE LINK
+===================================================== */
+
+#suitcase-link {
+
+    position: absolute;
+
+    top: clamp(59%, 85vw, 180%);
+
+    left: 70%;
+
+    width: 23%;
+
+    height: auto;
+
+    z-index: 50;
+
+    display: block;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    /*
+       Scale is applied to the outer link,
+       so it does not interfere with
+       suitcaseEnter / suitcaseFall / suitcaseFloat.
+    */
+
+    transition:
+        scale
+        0.22s
+        ease;
+
+}
+
+
+/* =====================================================
+   SUITCASE HOVER SCALE
+===================================================== */
+
+#suitcase-link:hover {
+
+    scale: 1.06;
+
+}
+
+
+/* =====================================================
+   SUITCASE ACTIVE
+   Slight press when clicked
+===================================================== */
+
+#suitcase-link:active {
+
+    scale: 0.97;
+
+}
+
+
+/* =====================================================
+   SUITCASE WRAPPER
+===================================================== */
+
+#suitcase-wrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+    animation:
+        suitcaseEnter
+        1.4s
+        cubic-bezier(0.16, 1, 0.3, 1)
+        forwards;
+
+}
+
+
+/* =====================================================
+   SUITCASE FALL
+===================================================== */
+
+#suitcase-fall {
+
+    width: 100%;
+
+    height: auto;
+
+    animation:
+        suitcaseFall
+        1.3s
+        ease-out
+        1.4s
+        forwards;
+
+}
+
+
+/* =====================================================
+   SUITCASE
+===================================================== */
+
+#suitcase {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    image-rendering: pixelated;
+
+    transform:
+        rotate(-30deg);
+
+    filter:
+        drop-shadow(
+            0 0 2px
+            #0062FF
+        )
+        drop-shadow(
+            0 0 7px
+            #0062FF
+        );
+
+    animation:
+        suitcaseFloat
+        5.2s
+        ease-in-out
+        2.7s
+        infinite;
+
+}
+
+
+/* =====================================================
+   SUITCASE ENTER
+   Left → right
+===================================================== */
+
+@keyframes suitcaseEnter {
+
+    0% {
+
+        transform:
+            translateX(-120vw);
+
+    }
+
+    80% {
+
+        transform:
+            translateX(8px);
+
+    }
+
+    100% {
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   SUITCASE FALL / ROTATE
+===================================================== */
+
+@keyframes suitcaseFall {
+
+    0% {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    22% {
+
+        transform:
+            rotate(75deg);
+
+    }
+
+    42% {
+
+        transform:
+            rotate(-50deg);
+
+    }
+
+    62% {
+
+        transform:
+            rotate(25deg);
+
+    }
+
+    80% {
+
+        transform:
+            rotate(-18deg);
+
+    }
+
+    100% {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   SUITCASE FLOAT
+===================================================== */
+
+@keyframes suitcaseFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-30deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-4px)
+            rotate(-30deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .contact-text {
+
+        font-size:
+            clamp(10px, 2.7vw, 15px);
+
+    }
+
+}
