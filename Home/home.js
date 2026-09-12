@@ -2132,9 +2132,9 @@ async function loadAssets() {
         /*
             IMPORTANT:
 
-            home.html is inside:
+            index.html is now in the ROOT:
 
-            /Home/
+            /
 
             therefore assets inside:
 
@@ -2142,19 +2142,19 @@ async function loadAssets() {
 
             must use:
 
-            ../Images/Home/
+            Images/Home/
         */
 
 
         faceImage =
             await loadImage(
-                "../Images/Home/Face.png"
+                "Images/Home/Face.png"
             );
 
 
         handImage =
             await loadImage(
-                "../Images/Home/Hand.png"
+                "Images/Home/Hand.png"
             );
 
 
@@ -2342,12 +2342,3 @@ loadAssets();
 requestAnimationFrame(
     animate
 );
-
-
-
-
-
-
-
-
-
